@@ -22,6 +22,14 @@ Pas encore implémenté :
 
 Le tableau de bord indique ces limites dans l’interface. Aucune vidéo fictive n’est présentée comme un flux réel.
 
+## Télécharger HORUS
+
+Les versions Windows sont publiées dans la section **Releases**. Pour une installation classique, télécharger le fichier `HORUS_*_x64-setup.exe`.
+
+La version `0.1.0` est une préversion technique : elle permet d’évaluer l’interface Windows et la gestion locale des caméras, mais ne lit pas encore les flux RTSP.
+
+L’installateur n’est pas encore signé numériquement. Windows SmartScreen peut donc demander une confirmation avant son exécution.
+
 ## Développement
 
 Prérequis : Windows 11 x64, Node.js 24+, Rust 1.90+ MSVC, Microsoft C++ Build Tools et WebView2.
