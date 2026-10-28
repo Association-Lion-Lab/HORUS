@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "horus",
+  "productName": "HORUS",
   "version": "0.1.0",
   "identifier": "com.neckr.horus",
   "build": {
@@ -12,13 +12,32 @@
   "app": {
     "windows": [
       {
-        "title": "horus",
-        "width": 800,
-        "height": 600
+        "title": "HORUS",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 860,
+        "minHeight": 560,
+        "center": true
       }
     ],
     "security": {
-      "csp": null
+      "csp": {
+        "default-src": "'self'",
+        "connect-src": "ipc: http://ipc.localhost",
+        "img-src": "'self' asset: http://asset.localhost data:",
+        "style-src": "'self' 'unsafe-inline'",
+        "object-src": "'none'",
+        "frame-src": "'none'"
+      },
+      "devCsp": {
+        "default-src": "'self'",
+        "connect-src": "ipc: http://ipc.localhost http://localhost:1420 ws://localhost:1420",
+        "img-src": "'self' asset: http://asset.localhost data:",
+        "style-src": "'self' 'unsafe-inline'",
+        "object-src": "'none'",
+        "frame-src": "'none'"
+      },
+      "freezePrototype": true
     }
   },
   "bundle": {
