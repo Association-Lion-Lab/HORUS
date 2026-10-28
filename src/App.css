@@ -46,10 +46,15 @@ button:focus-visible, input:focus-visible { outline: 2px solid #62c9ef; outline-
 .camera-grid.count-1 { grid-template-columns: minmax(0, 1fr); }
 .camera-card { min-width: 0; overflow: hidden; border: 1px solid #29313a; border-radius: 10px; background: #0c1015; }
 .camera-stage { position: relative; aspect-ratio: 16 / 9; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; overflow: hidden; background: radial-gradient(circle, #172129, #0b0e12 65%); }
+.camera-preview { width: 100%; height: 100%; object-fit: contain; background: #050607; }
 .camera-offline { display: grid; justify-items: center; gap: 8px; width: 80%; min-width: 0; color: #8b959f; font-size: 12px; text-align: center; }
 .camera-offline span { max-width: 100%; overflow-wrap: anywhere; }
 .camera-offline strong { color: #c3cbd2; font-size: 14px; }
 .offline-symbol { width: 26px; height: 20px; border: 1px solid #59636c; border-radius: 4px; }
+.preview-progress { width: 22px; height: 22px; border: 2px solid #34414b; border-top-color: #61c4e8; border-radius: 50%; animation: preview-spin .8s linear infinite; }
+.preview-retry { min-height: 30px; margin-top: 4px; padding: 0 12px; border: 1px solid #44515c; border-radius: 7px; color: #dce7ec; background: #171e24; cursor: pointer; }
+.preview-retry:hover { background: #222c34; }
+@keyframes preview-spin { to { transform: rotate(360deg); } }
 .camera-overlay { position: absolute; left: 0; right: 0; bottom: 0; display: flex; width: 100%; min-width: 0; justify-content: space-between; align-items: center; padding: 28px 14px 12px; background: linear-gradient(transparent, rgba(0,0,0,.88)); }
 .camera-overlay > div { display: flex; align-items: center; gap: 8px; }
 .camera-overlay button { width: 32px; height: 32px; border: 1px solid #44505a; border-radius: 7px; background: rgba(16,21,27,.8); cursor: pointer; }
@@ -66,4 +71,4 @@ button:focus-visible, input:focus-visible { outline: 2px solid #62c9ef; outline-
 @media (max-width: 900px) { .app-shell { grid-template-columns: 72px 1fr; } .sidebar { padding-inline: 10px; } .brand { justify-content: center; padding-inline: 0; } .brand > span:last-child, .nav-item { font-size: 0; } .nav-item { justify-content: center; padding: 0; } .privacy-note { justify-content: center; font-size: 0; } .workspace { padding: 22px 20px; } .summary p { display: none; } }
 @media (max-width: 680px) { .camera-grid { grid-template-columns: 1fr; } .summary > div { min-width: 0; flex: 1; margin-right: 12px; padding-right: 12px; } .summary > div:last-of-type { border-right: 0; margin-right: 0; padding-right: 0; } }
 @media (max-width: 520px) { .app-shell { display: block; } .sidebar { display: none; } .workspace { padding: 18px 14px; } .topbar { align-items: flex-start; } h1 { font-size: 30px; } .topbar-actions { flex-shrink: 0; } .primary-button { padding-inline: 12px; } .summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-inline: 10px; } .summary > div { display: grid; justify-items: center; gap: 1px; margin: 0; padding: 0 8px; } .summary span { text-align: center; } .empty-grid { min-height: calc(100vh - 170px); } .empty-state { padding: 28px 20px; } }
-@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } .preview-progress { animation: none; } }

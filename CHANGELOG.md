@@ -1,5 +1,11 @@
 # Journal des versions
 
+## Non publié
+
+### Ajouté
+
+- capture locale d’une image d’aperçu depuis un flux RTSP sans identifiants intégrés.
+
 ## 0.1.0 — 28 octobre 2026
 
 Première préversion technique de HORUS.

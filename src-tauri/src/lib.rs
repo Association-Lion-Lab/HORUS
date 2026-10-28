@@ -1,3 +1,4 @@
+mod preview;
 mod tray;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -8,6 +9,7 @@ pub fn run() {
             tray::install(app)?;
             Ok(())
         })
+        .invoke_handler(tauri::generate_handler![preview::capture_rtsp_preview])
         .on_window_event(|window, event| {
             if window.label() == "main"
                 && let tauri::WindowEvent::CloseRequested { api, .. } = event

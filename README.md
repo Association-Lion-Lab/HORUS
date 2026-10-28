@@ -10,11 +10,12 @@ Implémenté et compilé :
 - icône de tray, menu Afficher / Paramètres / Quitter et fermeture de fenêtre convertie en masquage ;
 - tableau de bord sombre responsive, ajout local à la grille et vue caméra agrandie ;
 - validation des URL `rtsp://` et `rtsps://`, avec refus des identifiants intégrés ;
+- capture locale d’un aperçu RTSP avec FFmpeg installé sur la machine ;
 - CSP Tauri restrictive, aucune télémétrie et aucune dépendance cloud.
 
 Pas encore implémenté :
 
-- lecture RTSP/H.264, FFmpeg embarqué et reconnexion ;
+- lecture RTSP/H.264 continue, FFmpeg embarqué et reconnexion ;
 - persistance SQLite et secrets Windows Credential Manager ;
 - démarrage Windows, raccourci global, état de fenêtre et notifications ;
 - ONVIF, Home Assistant, Scrypted et WebRTC ;
@@ -32,7 +33,7 @@ L’installateur n’est pas encore signé numériquement. Windows SmartScreen p
 
 ## Développement
 
-Prérequis : Windows 11 x64, Node.js 24+, Rust 1.90+ MSVC, Microsoft C++ Build Tools et WebView2.
+Prérequis : Windows 11 x64, Node.js 24+, Rust 1.90+ MSVC, Microsoft C++ Build Tools, WebView2 et FFmpeg accessible dans le `PATH` pour les aperçus RTSP.
 
 ```powershell
 npm install
